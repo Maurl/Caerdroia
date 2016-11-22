@@ -1,5 +1,5 @@
 public class Combate{
-
+	
 	private Personaje heroe;
 	private Personaje enemigo;
 	
@@ -7,7 +7,7 @@ public class Combate{
 		this.heroe = heroe;
 		this.enemigo = enemigo;
 	}
-
+	
 	public Personaje getHeroe() {
 		return heroe;
 	}
@@ -22,7 +22,7 @@ public class Combate{
 	}
 	
 	public void atacaHeroeHabilidad(){
-		enemigo.setVida(enemigo.getVida-(""+heroe.getFuerza()+heroe.getMagia()+heroe.get"FuerzaHabilidad"()+heroe.get"MagiaHabilidad"()-heroe.getResistencia()-heroe.getInteligencia()));
+		enemigo.setVida(enemigo.getVida-(""+heroe.getFuerza()+heroe.getMagia()-heroe.getResistencia()-heroe.getInteligencia()));
 	}
 	
 	public void atacaHeroeArma(){
@@ -30,6 +30,6 @@ public class Combate{
 	}
 	
 	public void atacaEnemigo(){
-		heroe.setVida(heroe.getVida-(""+enemigo.getFuerza()+enemigo.getMagia()+enemigo.get"FuerzaHabilidad"()+enemigo.get"MagiaHabilidad"()-enemigo.getResistencia()-enemigo.getInteligencia()));
+		heroe.setVida(heroe.getVida-(""+enemigo.getFuerza()+enemigo.getMagia()-enemigo.getResistencia()-enemigo.getInteligencia()));
 	}
 }

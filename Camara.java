@@ -19,6 +19,7 @@ public class Camara{
 	private String respuesta;
 	private int nivel;
 	private Random random;
+	private boolean entered;
 	
 	public Camara(int tipoEnemigo, int nivelEnemigo, int tipoEquipo, int tipoPocion, int claveLlave, int up, int down, int left, int right, String acertijo, String respuesta, int nivel) {
 		setEnemigo(tipoEnemigo, nivelEnemigo);
@@ -32,6 +33,7 @@ public class Camara{
 		this.acertijo = acertijo;
 		this.respuesta = respuesta;
 		this.nivel = nivel;
+		entered = false;
 	}
 
 	public Personaje getEnemigo() {
@@ -57,7 +59,7 @@ public class Camara{
 			break;
 
 			case 4:
-			enemigo = new Jefe();
+			enemigo = new Jefe(nivelEnemigo);
 			break;
 		}
 	}
@@ -69,23 +71,23 @@ public class Camara{
 	private void setEquipo(int tipoEquipo) {
 		switch(tipoEquipo){
 			case 0:
-			equipo = new Accesorio();
+			equipo = new Accesorio(false);
 			break;
 
 			case 1:
-			equipo = new Arma();
+			equipo = new Arma(false);
 			break;
 
 			case 2:
-			equipo = new Botas();
+			equipo = new Botas(false);
 			break;
 
 			case 3:
-			equipo = new Casco();
+			equipo = new Casco(false);
 			break;
 
 			case 4:
-			equipo = new Peto();
+			equipo = new Peto(false);
 			break;
 		}
 	}
@@ -102,7 +104,7 @@ public class Camara{
 		return llave;
 	}
 
-	private void setLlave(claveLlave) {
+	private void setLlave(int claveLlave) {
 		llave = new Llave(claveLlave);
 	}
 
@@ -162,4 +164,7 @@ public class Camara{
 		this.nivel = nivel;
 	}
 
+	public boolean isEntered(){
+		return entered;
+	}
 }

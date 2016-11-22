@@ -3,31 +3,42 @@
 // Cazador - 2
 // Necromancer - 3
 // Jefe - 4
-
+ 
 public class Personaje{
-	private String nombre;
-	private int vida;
-	private int fuerza;
-	private int magia;
-	private int resistencia;
-	private int inteligencia;
-	private int iniciativa;
-	private int experiencia;
-	private int nivel;
-	private Bolsa bolsa;
+	
+	protected String nombre;
+	protected int vida;
+	protected int fuerza;
+	protected int magia;
+	protected int resistencia;
+	protected int inteligencia;
+	protected int iniciativa;
+	protected int experiencia;
+	protected int nivel;
+	protected Bolsa bolsa;
 
-	public Personaje(String nombre, int vida, int fuerza, int magia, int resistencia, int inteligencia, int iniciativa,
-		int experiencia, int nivel, Bolsa bolsa) {
+	public Personaje(String nombre, int nivel) {
+		bolsa = new Bolsa();
 		this.nombre = nombre;
-		this.vida = vida;
-		this.fuerza = fuerza;
-		this.magia = magia;
-		this.resistencia = resistencia;
-		this.inteligencia = inteligencia;
-		this.iniciativa = iniciativa;
 		this.experiencia = experiencia;
+		
 		this.nivel = nivel;
-		this.bolsa = bolsa;
+		this.vida = nivel;
+		this.fuerza = nivel;
+		this.magia = nivel;
+		this.resistencia = nivel;
+		this.inteligencia = nivel;
+		this.iniciativa = nivel;
+	}
+
+	public Personaje(int nivel){
+		this.nivel = nivel;
+		this.vida = nivel;
+		this.fuerza = nivel;
+		this.magia = nivel;
+		this.resistencia = nivel;
+		this.inteligencia = nivel;
+		this.iniciativa = nivel;
 	}
 
 	public String getNombre() {
